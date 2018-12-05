@@ -9,6 +9,22 @@
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
+	<!-- 한글 인코딩 시작 -->
+	<filter>
+		<filter-name>CharEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CharEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 한글 인코딩 끝 -->
+	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
