@@ -5,6 +5,8 @@
 
 <mapper namespace="listMapper" >
 <!-- 안에 쿼리문 넣기 ( select 등 )  -->
+
+
 <!-- 전체데이터   -->
 <select id="getLists" resultType="com.todolist.list.HomeDTO">
 	select * from(
@@ -12,4 +14,10 @@
 	select listNum,title,content,createDate,closingDate,status,priorityNum from list
 	order by listNum desc) data)
 </select>
+
+
+<insert id="listInsert" parameterType="com.todolist.list.HomeDTO">
+insert into list (title,content,createDate,status,priorityNum) 
+values (#{title},#{content},sysdate,0,3)
+</insert>
 </mapper>

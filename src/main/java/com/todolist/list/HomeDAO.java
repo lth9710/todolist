@@ -24,5 +24,10 @@ public class HomeDAO {
 
 	}
 	
+	public void insertData(HomeDTO homeDTO) {
+
+		sessionTemplate.insert("listMapper.listInsert", homeDTO);
+
+	}
 	
 }
