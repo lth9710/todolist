@@ -12,9 +12,9 @@
 	<input type="button" value="일정등록" onclick="location.href='http://localhost:8080/list/register'"  >
 </h1>
 
-<c:forEach items="${lists }" var="dto">
+<%-- <c:forEach items="${lists }" var="dto">
 
 </c:forEach>
-
+ --%>
 </body>
 </html>

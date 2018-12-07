@@ -10,24 +10,17 @@ public class HomeDAO {
 
 	@Autowired
 	private SqlSessionTemplate sessionTemplate;
+	
+	public List<HomeDTO> getLists() {
 
-	public void setSessionTemplate(SqlSessionTemplate sessionTemplate) {
-		this.sessionTemplate = sessionTemplate;
+		return sessionTemplate.selectList("listMapper.getLists");
 	}
 	
-	public List<HomeDTO> getList() {
-
-
-		List<HomeDTO> lists = sessionTemplate.selectList("listMapper.getLists");
-
-		return lists;
-
-	}
-	
-	public void insertData(HomeDTO homeDTO) {
-
+	public void insert(HomeDTO homeDTO) {
+		/*
+		 * listInsert 네이밍변경
+		 */
 		sessionTemplate.insert("listMapper.listInsert", homeDTO);
-
 	}
 	
 }
